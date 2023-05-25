@@ -3,7 +3,6 @@ package com.contact.crud.services;
 import java.util.Collection;
 import java.util.UUID;
 
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.contact.crud.entities.ContactEntity;
@@ -35,12 +34,8 @@ public class ContactService implements IContactService {
         });
     }
 
-    public Collection<ContactEntity> findAll(int page, int size) {
-        var pageable = PageRequest.of(page, size);
-
-        var result = this.contactRepository.findAll(pageable);
-
-        return result.getContent();
+    public Collection<ContactEntity> findAll() {
+        return this.contactRepository.findAll();
     }
 
 }

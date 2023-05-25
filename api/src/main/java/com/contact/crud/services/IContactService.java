@@ -12,5 +12,5 @@ public interface IContactService {
 
     void update(UUID id, ContactEntity contact);
 
-    Collection<ContactEntity> findAll(int page, int size);
+    Collection<ContactEntity> findAll();
 }

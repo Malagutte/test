@@ -61,9 +61,8 @@ public class ContactController {
     }
 
     @GetMapping(produces = APPLICATION_JSON_VALUE)
-    public Collection<ContactResponseDto> findAll(@RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "10") int size) {
-        var contacts = contactService.findAll(page, size);
+    public Collection<ContactResponseDto> findAll() {
+        var contacts = contactService.findAll();
         return this.mapper.mapCollection(contacts, ContactResponseDto.class);
     }
 
